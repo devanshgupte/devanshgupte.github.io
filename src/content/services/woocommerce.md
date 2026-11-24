@@ -1,6 +1,7 @@
 ---
-title: WooCommerce Stores
+title: "WooCommerce stores"
 icon: cart
-summary: Online stores with payments, shipping, product setup and a smooth checkout experience.
+summary: "Product setup, Indian payment gateways, shipping rules and a checkout that doesn't lose customers."
+price: "From ₹40,000"
 order: 2
 ---

@@ -1,6 +1,7 @@
 ---
-title: Custom WordPress Websites
+title: "Custom WordPress websites"
 icon: layout
-summary: Bespoke themes built from your design, with editable blocks so you can update content yourself.
+summary: "A theme built from your design, so you can edit every page in the block editor without breaking the layout."
+price: "From ₹25,000"
 order: 1
 ---

@@ -1,24 +1,21 @@
 ---
-interface Props { name: string; class?: string }
-const { name, class: cls = 'h-6 w-6' } = Astro.props;
+interface Props { name: string; class?: string; size?: number }
+const { name, class: cls = '', size = 24 } = Astro.props;
 const paths: Record<string, string> = {
   layout: 'M3 4h18v16H3z M3 9h18 M9 9v11',
   cart: 'M3 4h2l2.4 11h11.2L21 7H6.2 M9 20a1 1 0 1 0 0-.01 M18 20a1 1 0 1 0 0-.01',
   bolt: 'M13 2 4 14h7l-1 8 9-12h-7z',
   shield: 'M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z M9 12l2 2 4-4',
   code: 'M8 7l-5 5 5 5 M16 7l5 5-5 5 M14 4l-4 16',
-  palette: 'M12 3a9 9 0 1 0 0 18c1 0 1.5-.8 1.5-1.5 0-1.2-1-1.5-1-2.5S13 15 14 15h2a5 5 0 0 0 5-5c0-3.9-4-7-9-7z M7.5 11a1 1 0 1 0 0-.01 M10 7.5a1 1 0 1 0 0-.01 M14.5 7.5a1 1 0 1 0 0-.01',
+  palette: 'M12 3a9 9 0 1 0 0 18c1 0 1.5-.8 1.5-1.5 0-1.2-1-1.5-1-2.5S13 15 14 15h2a5 5 0 0 0 5-5c0-3.9-4-7-9-7z',
   search: 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14z M20 20l-4-4',
   server: 'M4 4h16v6H4z M4 14h16v6H4z M8 7h.01 M8 17h.01',
   mobile: 'M7 2h10v20H7z M11 18h2',
   plug: 'M9 2v6 M15 2v6 M6 8h12v4a6 6 0 0 1-12 0z M12 18v4',
   arrow: 'M7 17 17 7 M8 7h9v9',
-  sun: 'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z M12 2v2 M12 20v2 M4.9 4.9l1.4 1.4 M17.7 17.7l1.4 1.4 M2 12h2 M20 12h2 M4.9 19.1l1.4-1.4 M17.7 6.3l1.4-1.4',
-  moon: 'M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z',
-  mail: 'M3 5h18v14H3z M3 6l9 7 9-7',
-  download: 'M12 3v12 M7 10l5 5 5-5 M4 21h16',
+  plus: 'M12 5v14 M5 12h14',
   menu: 'M4 7h16 M4 12h16 M4 17h16',
+  close: 'M6 6l12 12 M18 6 6 18',
 };
-const d = paths[name] ?? paths.code;
 ---
-<svg class={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={d} /></svg>
+<svg class={cls} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={paths[name] ?? paths.code} /></svg>

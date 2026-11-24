@@ -1,6 +1,7 @@
 ---
-title: Speed & Optimization
+title: "Speed optimization"
 icon: bolt
-summary: Faster load times, better Core Web Vitals and cleaner code for higher rankings.
+summary: "I find what's slowing your site down and fix it, with before-and-after PageSpeed reports."
+price: "From ₹8,000"
 order: 3
 ---

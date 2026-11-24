@@ -36,12 +36,7 @@ collections:
           - { name: location, label: Location, widget: string, required: false }
           - { name: available, label: Show "available for work" badge, widget: boolean, default: true }
           - { name: availabilityText, label: Availability badge text, widget: string }
-          - name: stats
-            label: Stats (hero)
-            widget: list
-            fields:
-              - { name: value, label: Number, widget: string }
-              - { name: label, label: Label, widget: string }
+          - { name: responseTime, label: Response time (contact section), widget: string, required: false, hint: "e.g. Replies within 24 hours" }
           - { name: email, label: Email, widget: string }
           - { name: phone, label: Phone, widget: string, required: false }
           - name: socials
@@ -53,6 +48,22 @@ collections:
           - { name: contactFormKey, label: Web3Forms access key, widget: string, required: false, hint: "Free key from web3forms.com. Leave empty to show an Email button instead of a form." }
           - { name: seoTitle, label: SEO title, widget: string }
           - { name: seoDescription, label: SEO description, widget: text }
+      - name: home
+        label: Process & FAQ
+        file: src/data/home.json
+        fields:
+          - name: process
+            label: How we'll work together (steps)
+            widget: list
+            fields:
+              - { name: title, label: Step title, widget: string }
+              - { name: text, label: Description, widget: text }
+          - name: faq
+            label: FAQ
+            widget: list
+            fields:
+              - { name: q, label: Question, widget: string }
+              - { name: a, label: Answer, widget: text }
       - name: skills
         label: Skills
         file: src/data/skills.json
@@ -78,7 +89,13 @@ collections:
       - { name: title, label: Title, widget: string }
       - { name: summary, label: Short summary, widget: text }
       - { name: image, label: Cover image, widget: image, required: false }
-      - { name: category, label: Category, widget: string, required: false, hint: "e.g. Custom Theme, WooCommerce, Plugin" }
+      - { name: category, label: Category, widget: string, required: false, hint: "e.g. Custom theme, WooCommerce, Plugin" }
+      - name: kind
+        label: Project type (badge)
+        widget: select
+        required: false
+        default: Client project
+        options: [Client project, Personal project, Concept project]
       - { name: tags, label: Tech tags, widget: list, required: false }
       - { name: liveUrl, label: Live site URL, widget: string, required: false }
       - { name: repoUrl, label: Code / GitHub URL, widget: string, required: false }

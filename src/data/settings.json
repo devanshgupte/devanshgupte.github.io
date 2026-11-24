@@ -1,26 +1,29 @@
 {
   "name": "Devansh Gupte",
   "role": "WordPress Developer",
-  "headline": "I build fast, flexible WordPress websites that businesses can actually manage.",
-  "intro": "Custom themes, Gutenberg blocks, WooCommerce stores and performance tuning — from first wireframe to launch and beyond.",
+  "headline": "WordPress sites your team can edit without calling me.",
+  "intro": "I'm Devansh, a WordPress developer. I build custom themes, Gutenberg blocks and WooCommerce stores that load fast and are easy to manage.",
   "location": "India",
   "available": true,
-  "availabilityText": "Available for freelance projects",
+  "availabilityText": "Taking new projects",
   "photo": "",
   "resume": "",
   "email": "hello@example.com",
   "phone": "",
-  "about": "I'm a WordPress developer who cares about clean code and websites that are easy for clients to run. I work across custom themes, block development, WooCommerce and site speed.\n\nReplace this text from the admin panel with your own story — what you do, who you work with and what makes your work different.",
-  "stats": [
-    { "value": "3+", "label": "Years experience" },
-    { "value": "40+", "label": "Websites delivered" },
-    { "value": "95+", "label": "Avg. PageSpeed score" }
-  ],
+  "about": "I build WordPress sites for small businesses, startups and agencies. Most of my work is custom themes and WooCommerce stores, plus the plugins and blocks that tie them together.\n\nWhat I care about most is the handover. A site isn't finished when it launches: it's finished when the owner can update it without help. So I build with native blocks, keep plugins to a minimum and leave clear documentation.\n\nReplace this text with your own story from the admin panel.",
   "socials": [
-    { "label": "GitHub", "url": "https://github.com/devanshgupte" },
-    { "label": "LinkedIn", "url": "https://www.linkedin.com/" }
+    {
+      "label": "GitHub",
+      "url": "https://github.com/devanshgupte"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/"
+    }
   ],
   "contactFormKey": "",
   "seoTitle": "Devansh Gupte — WordPress Developer",
-  "seoDescription": "Portfolio of Devansh Gupte, a WordPress developer building custom themes, Gutenberg blocks and WooCommerce stores."
+  "seoDescription": "Portfolio of Devansh Gupte, a WordPress developer building custom themes, Gutenberg blocks and WooCommerce stores.",
+  "stack": "WordPress, WooCommerce, PHP, React",
+  "responseTime": "Replies within 24 hours"
 }

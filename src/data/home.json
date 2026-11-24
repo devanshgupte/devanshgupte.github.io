@@ -1,0 +1,46 @@
+{
+  "process": [
+    {
+      "title": "Discovery call",
+      "text": "A free 30-minute call to understand your business, your goals and what the site needs to do."
+    },
+    {
+      "title": "Proposal & plan",
+      "text": "A fixed quote, a timeline and a list of pages and features, so there are no surprises later."
+    },
+    {
+      "title": "Design & build",
+      "text": "I build on a private staging site and share progress every week so you can give feedback early."
+    },
+    {
+      "title": "Launch & handover",
+      "text": "I move the site live, test everything and show you how to edit it, with a short video guide."
+    },
+    {
+      "title": "Support",
+      "text": "30 days of free fixes after launch, then an optional monthly care plan."
+    }
+  ],
+  "faq": [
+    {
+      "q": "How long does a website take?",
+      "a": "A typical business site takes 2–4 weeks. WooCommerce stores usually take 4–6 weeks, depending on the number of products and integrations."
+    },
+    {
+      "q": "Will I be able to update the site myself?",
+      "a": "Yes. I build with the native block editor and reusable patterns, and every project ends with a walkthrough and a video guide."
+    },
+    {
+      "q": "Do you work with existing websites?",
+      "a": "Yes. I take on fixes, redesigns, speed work and new features for existing WordPress sites."
+    },
+    {
+      "q": "Do you handle hosting and domains?",
+      "a": "I can recommend hosting, set it up for you and move your site over. The hosting account stays in your name."
+    },
+    {
+      "q": "How do payments work?",
+      "a": "Usually 50% upfront and 50% at launch. Larger projects can be split into milestones."
+    }
+  ]
+}
