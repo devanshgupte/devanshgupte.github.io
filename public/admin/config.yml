@@ -135,6 +135,11 @@ collections:
           - { label: Server (hosting), value: server }
           - { label: Mobile, value: mobile }
           - { label: Plug (plugins), value: plug }
+          - { label: Globe (website), value: globe }
+          - { label: Browser window (web app), value: window }
+          - { label: Building (ERP), value: building }
+          - { label: Pen (design), value: pen }
+          - { label: Cloud (hosting), value: cloud }
       - { name: summary, label: Description, widget: text }
       - { name: includes, label: "What's included", widget: list, required: false, field: { name: item, label: Item, widget: string } }
       - { name: price, label: Price (optional), widget: string, required: false, hint: "e.g. Starting at ₹15,000" }
