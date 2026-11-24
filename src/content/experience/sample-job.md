@@ -1,5 +1,5 @@
 ---
-role: WordPress Developer
+role: Web & App Developer
 company: Company Name
 location: Remote
 start: "2023"

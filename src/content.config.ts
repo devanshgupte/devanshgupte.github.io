@@ -27,6 +27,7 @@ const services = defineCollection({
     title: z.string(),
     icon: z.string().default('code'),
     summary: z.string(),
+    includes: z.array(z.string()).default([]),
     price: z.string().optional(),
     order,
   }),

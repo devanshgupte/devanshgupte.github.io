@@ -23,20 +23,20 @@
   ],
   "faq": [
     {
-      "q": "How long does a website take?",
-      "a": "A typical business site takes 2–4 weeks. WooCommerce stores usually take 4–6 weeks, depending on the number of products and integrations."
+      "q": "How long does a project take?",
+      "a": "A business website usually takes 2–4 weeks. Web apps, mobile apps and ERP systems depend on the features, and typically take 6–12 weeks. You'll get a clear timeline before we start."
     },
     {
-      "q": "Will I be able to update the site myself?",
-      "a": "Yes. I build with the native block editor and reusable patterns, and every project ends with a walkthrough and a video guide."
+      "q": "Can you build both the app and the website?",
+      "a": "Yes. I often build the website, web app, mobile app and admin panel together, all connected to the same backend."
     },
     {
-      "q": "Do you work with existing websites?",
-      "a": "Yes. I take on fixes, redesigns, speed work and new features for existing WordPress sites."
+      "q": "Do you work on existing projects?",
+      "a": "Yes. I take on fixes, redesigns, speed improvements and new features for existing websites and apps."
     },
     {
-      "q": "Do you handle hosting and domains?",
-      "a": "I can recommend hosting, set it up for you and move your site over. The hosting account stays in your name."
+      "q": "Do you handle hosting and app store publishing?",
+      "a": "Yes. I can set up hosting, domains and servers, and publish apps to the Play Store and App Store. Accounts stay in your name."
     },
     {
       "q": "How do payments work?",

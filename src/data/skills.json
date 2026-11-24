@@ -1,8 +1,198 @@
 {
   "groups": [
-    { "title": "WordPress", "items": ["Custom Themes", "Gutenberg Blocks", "ACF", "WooCommerce", "Elementor", "Multisite"] },
-    { "title": "Frontend", "items": ["HTML", "CSS / SCSS", "JavaScript", "React", "Tailwind CSS"] },
-    { "title": "Backend", "items": ["PHP", "MySQL", "REST API", "WP-CLI"] },
-    { "title": "Tools", "items": ["Git", "GitHub", "Figma", "Local WP", "cPanel"] }
+    {
+      "title": "Frontend",
+      "items": [
+        {
+          "name": "HTML5",
+          "icon": "html5"
+        },
+        {
+          "name": "CSS",
+          "icon": "css"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "javascript"
+        },
+        {
+          "name": "TypeScript",
+          "icon": "typescript"
+        },
+        {
+          "name": "React",
+          "icon": "react"
+        },
+        {
+          "name": "Next.js",
+          "icon": "nextdotjs"
+        },
+        {
+          "name": "Vue.js",
+          "icon": "vuedotjs"
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "tailwindcss"
+        },
+        {
+          "name": "Bootstrap",
+          "icon": "bootstrap"
+        }
+      ]
+    },
+    {
+      "title": "Backend",
+      "items": [
+        {
+          "name": "Node.js",
+          "icon": "nodedotjs"
+        },
+        {
+          "name": "Express",
+          "icon": "express"
+        },
+        {
+          "name": "PHP",
+          "icon": "php"
+        },
+        {
+          "name": "Laravel",
+          "icon": "laravel"
+        },
+        {
+          "name": "Python",
+          "icon": "python"
+        },
+        {
+          "name": "Django",
+          "icon": "django"
+        },
+        {
+          "name": "GraphQL",
+          "icon": "graphql"
+        }
+      ]
+    },
+    {
+      "title": "Mobile",
+      "items": [
+        {
+          "name": "Flutter",
+          "icon": "flutter"
+        },
+        {
+          "name": "Dart",
+          "icon": "dart"
+        },
+        {
+          "name": "React Native",
+          "icon": "react"
+        },
+        {
+          "name": "Kotlin",
+          "icon": "kotlin"
+        },
+        {
+          "name": "Android",
+          "icon": "android"
+        },
+        {
+          "name": "Firebase",
+          "icon": "firebase"
+        }
+      ]
+    },
+    {
+      "title": "Databases",
+      "items": [
+        {
+          "name": "MySQL",
+          "icon": "mysql"
+        },
+        {
+          "name": "PostgreSQL",
+          "icon": "postgresql"
+        },
+        {
+          "name": "MongoDB",
+          "icon": "mongodb"
+        },
+        {
+          "name": "Redis",
+          "icon": "redis"
+        },
+        {
+          "name": "Supabase",
+          "icon": "supabase"
+        }
+      ]
+    },
+    {
+      "title": "CMS & e-commerce",
+      "items": [
+        {
+          "name": "WordPress",
+          "icon": "wordpress"
+        },
+        {
+          "name": "WooCommerce",
+          "icon": "woocommerce"
+        },
+        {
+          "name": "Shopify",
+          "icon": "shopify"
+        },
+        {
+          "name": "Razorpay",
+          "icon": "razorpay"
+        }
+      ]
+    },
+    {
+      "title": "Tools & cloud",
+      "items": [
+        {
+          "name": "Git",
+          "icon": "git"
+        },
+        {
+          "name": "GitHub",
+          "icon": "github"
+        },
+        {
+          "name": "Docker",
+          "icon": "docker"
+        },
+        {
+          "name": "Figma",
+          "icon": "figma"
+        },
+        {
+          "name": "Postman",
+          "icon": "postman"
+        },
+        {
+          "name": "Google Cloud",
+          "icon": "googlecloud"
+        },
+        {
+          "name": "DigitalOcean",
+          "icon": "digitalocean"
+        },
+        {
+          "name": "Cloudflare",
+          "icon": "cloudflare"
+        },
+        {
+          "name": "Vercel",
+          "icon": "vercel"
+        },
+        {
+          "name": "Linux",
+          "icon": "linux"
+        }
+      ]
+    }
   ]
 }

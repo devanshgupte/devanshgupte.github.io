@@ -1,0 +1,10 @@
+---
+import * as icons from 'simple-icons';
+interface Props { slug?: string; size?: number }
+const { slug = '', size = 22 } = Astro.props;
+const key = 'si' + slug.charAt(0).toUpperCase() + slug.slice(1);
+const icon = (icons as Record<string, any>)[key];
+const dark = icon && ['000000', '181717', '0A0A0A', '092E20', '0F0F11', '1C2024', '0C2451'].includes(icon.hex);
+const fill = icon ? (dark ? '#17153b' : `#${icon.hex}`) : '';
+---
+{icon && <svg width={size} height={size} viewBox="0 0 24 24" fill={fill} aria-hidden="true"><path d={icon.path} /></svg>}

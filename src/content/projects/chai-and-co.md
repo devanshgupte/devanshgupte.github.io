@@ -6,7 +6,7 @@ category: "WooCommerce"
 kind: "Concept project"
 tags: [WooCommerce, Block theme, Razorpay, PHP]
 featured: true
-order: 1
+order: 2
 ---
 ## The idea
 Small tea brands sell mostly on Instagram and WhatsApp, which makes repeat orders messy. Chai & Co. is a concept store that turns those followers into subscribers.

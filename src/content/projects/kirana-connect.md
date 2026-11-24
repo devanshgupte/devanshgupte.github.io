@@ -1,21 +1,22 @@
 ---
-title: "Kirana Connect grocery ordering"
-summary: "A neighbourhood grocery ordering site where customers order online and the shop receives orders on WhatsApp."
+title: "Kirana Connect grocery app"
+summary: "A grocery ordering app for local stores: customers order from their phone, and the shop manages orders from a simple dashboard."
 image: /uploads/projects/kirana-connect.svg
-category: "WooCommerce"
+category: "Mobile app"
 kind: "Concept project"
-tags: [WooCommerce, Custom plugin, WhatsApp API, PWA]
-featured: false
-order: 4
+tags: [Flutter, Firebase, Node.js, WhatsApp API]
+featured: true
+order: 5
 ---
+
 ## The idea
-Local kirana stores can't afford delivery apps' commissions. Kirana Connect is a concept for a simple ordering site a single store can run on its own.
+Local kirana stores can't afford the commissions charged by big delivery apps. Kirana Connect is a concept for a simple ordering app that a single store can run on its own.
 
 ## What I built
-- A fast, mobile-first product catalogue with categories and search
+- A mobile app for customers (Android and iOS, built with Flutter) with categories, search and a quick reorder button
 - Delivery slots and a minimum order amount by area
-- New orders sent to the shop owner's WhatsApp
-- Installable as an app on phones (PWA)
+- A web dashboard for the shop owner to manage products, stock and orders
+- New orders sent to the owner's WhatsApp, so nothing is missed
 
 ## Why it's useful
-It shows how WooCommerce can be trimmed down for a business with one owner, one phone and no time for a complex dashboard.
+It shows how one codebase can serve customers on their phones and the owner on a laptop, without monthly commissions.

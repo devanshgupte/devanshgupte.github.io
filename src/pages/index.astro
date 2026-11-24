@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
+import TechIcon from '../components/TechIcon.astro';
 import settings from '../data/settings.json';
 import skills from '../data/skills.json';
 import home from '../data/home.json';
@@ -58,13 +59,14 @@ const ring = `${settings.availabilityText} ✦ ${settings.availabilityText} ✦ 
     <section id="services" class="block">
       <div class="wrap">
         <h2 class="title">What I can build for you</h2>
-        <p class="lede">Pick one, or combine a few. Every project comes with a walkthrough so you can run the site yourself.</p>
+        <p class="lede">From a simple website to a full ERP with a mobile app, I can take your project from idea to launch.</p>
         <div class="services">
           {services.map((s, i) => (
             <article class="chunk service">
               <div class="ico" style={`background:${serviceColors[i % serviceColors.length]}`}><Icon name={s.data.icon} size={28} /></div>
               <h3>{s.data.title}</h3>
               <p>{s.data.summary}</p>
+              {s.data.includes.length > 0 && <ul class="includes">{s.data.includes.map((x) => <li>{x}</li>)}</ul>}
               {s.data.price && <span class="price">{s.data.price}</span>}
             </article>
           ))}
@@ -77,7 +79,7 @@ const ring = `${settings.availabilityText} ✦ ${settings.availabilityText} ✦ 
     <section id="work" class="block work">
       <div class="wrap">
         <h2 class="title">Things I've built</h2>
-        <p class="lede">Stores, custom themes, plugins and performance work. Open any project to read how it was made.</p>
+        <p class="lede">Client work, personal builds and concepts across websites, web apps, mobile apps and ERP. Open any project to read how it was made.</p>
         <div class="projects">
           {projects.map((p) => (
             <a href={`/projects/${p.id}/`} class="chunk project">
@@ -116,11 +118,26 @@ const ring = `${settings.availabilityText} ✦ ${settings.availabilityText} ✦ 
       <div>
         <h2 class="title">About me</h2>
         <div class="about-text">{aboutParas.map((p) => <p>{p}</p>)}</div>
-        <div class="skills">
-          {skills.groups.map((g) => (
-            <div><h3>{g.title}</h3><div class="pills">{g.items.map((s) => <span class="pill">{s}</span>)}</div></div>
-          ))}
-        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack" class="block stack-block">
+    <div class="wrap">
+      <h2 class="title">Tech I work with</h2>
+      <p class="lede">I pick the right tools for each project, not the same ones every time.</p>
+      <div class="tech-groups">
+        {skills.groups.map((g) => (
+          <div class="chunk tech-group">
+            <h3>{g.title}</h3>
+            <ul class="tech-list">
+              {g.items.map((t: any) => {
+                const item = typeof t === 'string' ? { name: t, icon: '' } : t;
+                return <li><span class="tech-logo"><TechIcon slug={item.icon} size={22} /></span>{item.name}</li>;
+              })}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   </section>

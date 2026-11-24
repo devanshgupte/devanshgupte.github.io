@@ -8,7 +8,7 @@ const { title, description, image } = Astro.props;
 const pageTitle = title ? `${title} | ${settings.name}` : settings.seoTitle;
 const desc = description ?? settings.seoDescription;
 const ogImage = new URL(image || settings.photo || '/favicon.svg', Astro.site).href;
-const nav = [['Services', '/#services'], ['Work', '/#work'], ['Process', '/#process'], ['About', '/#about'], ['FAQ', '/#faq']];
+const nav = [['Services', '/#services'], ['Work', '/#work'], ['Process', '/#process'], ['About', '/#about'], ['Tech', '/#stack']];
 const year = new Date().getFullYear();
 ---
 <!doctype html>
