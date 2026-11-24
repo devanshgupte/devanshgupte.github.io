@@ -1,0 +1,192 @@
+# Admin panel configuration (Sveltia CMS)
+# Open https://devanshgupte.github.io/admin/ and choose "Sign in with Token".
+backend:
+  name: github
+  repo: devanshgupte/devanshgupte.github.io
+  branch: main
+  commit_messages:
+    create: "Add {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "Upload “{{path}}”"
+    deleteMedia: "Delete “{{path}}”"
+
+site_url: https://devanshgupte.github.io
+display_url: https://devanshgupte.github.io
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  # ---------- SITE SETTINGS ----------
+  - name: settings
+    label: Site Settings
+    icon: settings
+    files:
+      - name: general
+        label: Profile & Contact
+        file: src/data/settings.json
+        fields:
+          - { name: name, label: Full name, widget: string }
+          - { name: role, label: Role / title, widget: string }
+          - { name: headline, label: Hero headline, widget: text }
+          - { name: intro, label: Hero intro line, widget: text }
+          - { name: photo, label: Profile photo, widget: image, required: false }
+          - { name: resume, label: Resume (PDF), widget: file, required: false }
+          - { name: about, label: About me, widget: text, hint: "Leave an empty line between paragraphs." }
+          - { name: location, label: Location, widget: string, required: false }
+          - { name: available, label: Show "available for work" badge, widget: boolean, default: true }
+          - { name: availabilityText, label: Availability badge text, widget: string }
+          - name: stats
+            label: Stats (hero)
+            widget: list
+            fields:
+              - { name: value, label: Number, widget: string }
+              - { name: label, label: Label, widget: string }
+          - { name: email, label: Email, widget: string }
+          - { name: phone, label: Phone, widget: string, required: false }
+          - name: socials
+            label: Social links
+            widget: list
+            fields:
+              - { name: label, label: Name (e.g. LinkedIn), widget: string }
+              - { name: url, label: URL, widget: string }
+          - { name: contactFormKey, label: Web3Forms access key, widget: string, required: false, hint: "Free key from web3forms.com. Leave empty to show an Email button instead of a form." }
+          - { name: seoTitle, label: SEO title, widget: string }
+          - { name: seoDescription, label: SEO description, widget: text }
+      - name: skills
+        label: Skills
+        file: src/data/skills.json
+        fields:
+          - name: groups
+            label: Skill groups
+            widget: list
+            fields:
+              - { name: title, label: Group name, widget: string }
+              - { name: items, label: Skills, widget: list, field: { name: skill, label: Skill, widget: string } }
+
+  # ---------- PROJECTS ----------
+  - name: projects
+    label: Projects
+    label_singular: Project
+    icon: work
+    folder: src/content/projects
+    create: true
+    slug: "{{slug}}"
+    sortable_fields: [order, title]
+    summary: "{{title}} — {{category}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: summary, label: Short summary, widget: text }
+      - { name: image, label: Cover image, widget: image, required: false }
+      - { name: category, label: Category, widget: string, required: false, hint: "e.g. Custom Theme, WooCommerce, Plugin" }
+      - { name: tags, label: Tech tags, widget: list, required: false }
+      - { name: liveUrl, label: Live site URL, widget: string, required: false }
+      - { name: repoUrl, label: Code / GitHub URL, widget: string, required: false }
+      - { name: featured, label: Featured, widget: boolean, default: false }
+      - { name: draft, label: Hide (draft), widget: boolean, default: false }
+      - { name: order, label: Display order, widget: number, default: 100, value_type: int, hint: "Lower numbers show first" }
+      - { name: body, label: Case study / details, widget: markdown, required: false }
+
+  # ---------- SERVICES ----------
+  - name: services
+    label: Services
+    label_singular: Service
+    icon: design_services
+    folder: src/content/services
+    create: true
+    slug: "{{slug}}"
+    sortable_fields: [order, title]
+    fields:
+      - { name: title, label: Title, widget: string }
+      - name: icon
+        label: Icon
+        widget: select
+        default: code
+        options:
+          - { label: Code, value: code }
+          - { label: Layout / Website, value: layout }
+          - { label: Shopping cart, value: cart }
+          - { label: Lightning (speed), value: bolt }
+          - { label: Shield (security), value: shield }
+          - { label: Palette (design), value: palette }
+          - { label: Search (SEO), value: search }
+          - { label: Server (hosting), value: server }
+          - { label: Mobile, value: mobile }
+          - { label: Plug (plugins), value: plug }
+      - { name: summary, label: Description, widget: text }
+      - { name: price, label: Price (optional), widget: string, required: false, hint: "e.g. Starting at ₹15,000" }
+      - { name: order, label: Display order, widget: number, default: 100, value_type: int }
+
+  # ---------- EXPERIENCE ----------
+  - name: experience
+    label: Experience
+    label_singular: Experience
+    icon: badge
+    folder: src/content/experience
+    create: true
+    identifier_field: role
+    slug: "{{company}}-{{role}}"
+    summary: "{{role}} @ {{company}}"
+    sortable_fields: [order]
+    fields:
+      - { name: role, label: Role, widget: string }
+      - { name: company, label: Company, widget: string }
+      - { name: companyUrl, label: Company website, widget: string, required: false }
+      - { name: location, label: Location, widget: string, required: false }
+      - { name: start, label: Start (e.g. Jan 2023), widget: string }
+      - { name: end, label: End, widget: string, required: false }
+      - { name: current, label: I currently work here, widget: boolean, default: false }
+      - { name: order, label: Display order, widget: number, default: 100, value_type: int, hint: "1 = most recent" }
+      - { name: body, label: Description, widget: markdown, required: false }
+
+  # ---------- EDUCATION ----------
+  - name: education
+    label: Education
+    label_singular: Education
+    icon: school
+    folder: src/content/education
+    create: true
+    identifier_field: degree
+    slug: "{{institute}}-{{degree}}"
+    summary: "{{degree}} — {{institute}}"
+    sortable_fields: [order]
+    fields:
+      - { name: degree, label: Degree / course, widget: string }
+      - { name: institute, label: Institute, widget: string }
+      - { name: start, label: Start year, widget: string }
+      - { name: end, label: End year, widget: string, required: false }
+      - { name: grade, label: Grade / CGPA, widget: string, required: false }
+      - { name: order, label: Display order, widget: number, default: 100, value_type: int }
+
+  # ---------- CERTIFICATIONS ----------
+  - name: certifications
+    label: Certifications
+    label_singular: Certification
+    icon: verified
+    folder: src/content/certifications
+    create: true
+    slug: "{{slug}}"
+    sortable_fields: [order]
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: issuer, label: Issued by, widget: string }
+      - { name: date, label: Date, widget: string, required: false }
+      - { name: url, label: Certificate link, widget: string, required: false }
+      - { name: order, label: Display order, widget: number, default: 100, value_type: int }
+
+  # ---------- TESTIMONIALS ----------
+  - name: testimonials
+    label: Testimonials
+    label_singular: Testimonial
+    icon: format_quote
+    folder: src/content/testimonials
+    create: true
+    identifier_field: name
+    slug: "{{name}}"
+    sortable_fields: [order]
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: role, label: Role & company, widget: string, required: false }
+      - { name: photo, label: Photo, widget: image, required: false }
+      - { name: quote, label: Testimonial, widget: text }
+      - { name: order, label: Display order, widget: number, default: 100, value_type: int }

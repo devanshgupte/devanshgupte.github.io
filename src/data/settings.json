@@ -1,0 +1,26 @@
+{
+  "name": "Devansh Gupte",
+  "role": "WordPress Developer",
+  "headline": "I build fast, flexible WordPress websites that businesses can actually manage.",
+  "intro": "Custom themes, Gutenberg blocks, WooCommerce stores and performance tuning — from first wireframe to launch and beyond.",
+  "location": "India",
+  "available": true,
+  "availabilityText": "Available for freelance projects",
+  "photo": "",
+  "resume": "",
+  "email": "hello@example.com",
+  "phone": "",
+  "about": "I'm a WordPress developer who cares about clean code and websites that are easy for clients to run. I work across custom themes, block development, WooCommerce and site speed.\n\nReplace this text from the admin panel with your own story — what you do, who you work with and what makes your work different.",
+  "stats": [
+    { "value": "3+", "label": "Years experience" },
+    { "value": "40+", "label": "Websites delivered" },
+    { "value": "95+", "label": "Avg. PageSpeed score" }
+  ],
+  "socials": [
+    { "label": "GitHub", "url": "https://github.com/devanshgupte" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/" }
+  ],
+  "contactFormKey": "",
+  "seoTitle": "Devansh Gupte — WordPress Developer",
+  "seoDescription": "Portfolio of Devansh Gupte, a WordPress developer building custom themes, Gutenberg blocks and WooCommerce stores."
+}

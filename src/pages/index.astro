@@ -1,0 +1,271 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import settings from '../data/settings.json';
+import skills from '../data/skills.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const byOrder = (a: any, b: any) => a.data.order - b.data.order;
+const projects = (await getCollection('projects', (p) => !p.data.draft)).sort(byOrder);
+const services = (await getCollection('services')).sort(byOrder);
+const experience = (await getCollection('experience')).sort(byOrder);
+const education = (await getCollection('education')).sort(byOrder);
+const certs = (await getCollection('certifications')).sort(byOrder);
+const testimonials = (await getCollection('testimonials')).sort(byOrder);
+const aboutParas = settings.about.split(/\n\s*\n/).filter(Boolean);
+const initials = settings.name.split(' ').map((w) => w[0]).join('').slice(0, 2);
+const img = (src?: string) => (src && src.startsWith('/') ? `${base}${src}` : src);
+---
+<Base>
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-accent/20 blur-3xl dark:bg-accent/25"></div>
+    <div class="container-x relative grid items-center gap-12 pt-20 pb-24 sm:pt-28 lg:grid-cols-[1.4fr_1fr]">
+      <div class="reveal">
+        {settings.available && (
+          <span class="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1 text-xs font-medium dark:border-white/10 dark:bg-white/5">
+            <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span></span>
+            {settings.availabilityText}
+          </span>
+        )}
+        <p class="eyebrow mt-8">{settings.name} · {settings.role}</p>
+        <h1 class="font-display mt-4 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">{settings.headline}</h1>
+        <p class="mt-6 max-w-xl text-lg text-slate-600 dark:text-slate-400">{settings.intro}</p>
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a href="#work" class="btn-primary">View my work <Icon name="arrow" class="h-4 w-4" /></a>
+          <a href="#contact" class="btn-ghost">Hire me</a>
+          {settings.resume && <a href={img(settings.resume)} target="_blank" class="btn-ghost"><Icon name="download" class="h-4 w-4" /> Resume</a>}
+        </div>
+      </div>
+      <div class="reveal mx-auto w-full max-w-sm">
+        <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-black/10 bg-gradient-to-br from-accent to-[#7c3aed] shadow-2xl shadow-accent/20 dark:border-white/10">
+          {settings.photo
+            ? <img src={img(settings.photo)} alt={settings.name} class="h-full w-full object-cover" />
+            : <div class="flex h-full items-center justify-center font-display text-8xl font-extrabold text-white/90">{initials}</div>}
+        </div>
+      </div>
+    </div>
+    {settings.stats?.length > 0 && (
+      <div class="container-x relative pb-10">
+        <div class="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 sm:grid-cols-3 dark:border-white/10 dark:bg-white/10">
+          {settings.stats.map((s) => (
+            <div class="bg-paper px-6 py-6 dark:bg-[#0b0d17]">
+              <div class="font-display text-4xl font-bold">{s.value}</div>
+              <div class="mt-1 text-sm text-slate-500">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container-x grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+      <div class="reveal"><p class="eyebrow">About</p><h2 class="h2 mt-3">A bit about me</h2></div>
+      <div class="reveal space-y-5 text-lg leading-relaxed text-slate-700 dark:text-slate-300">
+        {aboutParas.map((p) => <p>{p}</p>)}
+        {settings.location && <p class="text-sm text-slate-500">📍 Based in {settings.location}</p>}
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  {services.length > 0 && (
+    <section id="services" class="section bg-white dark:bg-white/[0.02]">
+      <div class="container-x">
+        <div class="reveal max-w-2xl"><p class="eyebrow">Services</p><h2 class="h2 mt-3">What I can do for you</h2></div>
+        <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((s) => (
+            <div class="reveal card group p-7 transition hover:-translate-y-1 hover:border-accent">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-soft text-accent dark:bg-accent/15"><Icon name={s.data.icon} /></div>
+              <h3 class="font-display mt-6 text-xl font-bold">{s.data.title}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{s.data.summary}</p>
+              {s.data.price && <p class="mt-5 text-sm font-semibold text-accent">{s.data.price}</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- WORK -->
+  {projects.length > 0 && (
+    <section id="work" class="section">
+      <div class="container-x">
+        <div class="reveal flex flex-wrap items-end justify-between gap-4">
+          <div><p class="eyebrow">Selected work</p><h2 class="h2 mt-3">Projects</h2></div>
+        </div>
+        <div class="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((p, i) => (
+            <a href={`${base}/projects/${p.id}/`} class="reveal card group flex flex-col overflow-hidden transition hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10">
+              <div class="aspect-[16/10] overflow-hidden bg-gradient-to-br from-accent-soft to-white dark:from-accent/20 dark:to-transparent">
+                {p.data.image
+                  ? <img src={img(p.data.image)} alt={p.data.title} loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                  : <div class="flex h-full items-center justify-center font-display text-6xl font-extrabold text-accent/30">{String(i + 1).padStart(2, '0')}</div>}
+              </div>
+              <div class="flex flex-1 flex-col p-6">
+                {p.data.category && <p class="eyebrow">{p.data.category}</p>}
+                <h3 class="font-display mt-2 flex items-start justify-between gap-3 text-xl font-bold">
+                  {p.data.title}
+                  <Icon name="arrow" class="h-5 w-5 shrink-0 transition group-hover:text-accent" />
+                </h3>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{p.data.summary}</p>
+                <div class="mt-5 flex flex-wrap gap-2">{p.data.tags.slice(0, 4).map((t) => <span class="tag">{t}</span>)}</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- SKILLS -->
+  {skills.groups.length > 0 && (
+    <section id="skills" class="section bg-ink text-white dark:bg-white/[0.03]">
+      <div class="container-x">
+        <div class="reveal"><p class="eyebrow">Toolbox</p><h2 class="h2 mt-3">Skills & technologies</h2></div>
+        <div class="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {skills.groups.map((g) => (
+            <div class="reveal">
+              <h3 class="font-mono text-sm uppercase tracking-widest text-[#9fb0ff]">{g.title}</h3>
+              <ul class="mt-5 flex flex-wrap gap-2">
+                {g.items.map((s) => <li class="rounded-full border border-white/15 px-3 py-1.5 text-sm text-white/85">{s}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- EXPERIENCE & EDUCATION -->
+  <section id="experience" class="section">
+    <div class="container-x grid gap-16 lg:grid-cols-2">
+      {experience.length > 0 && (
+        <div>
+          <div class="reveal"><p class="eyebrow">Career</p><h2 class="h2 mt-3">Experience</h2></div>
+          <ol class="mt-10 space-y-8 border-l border-black/10 pl-8 dark:border-white/10">
+            {experience.map((e) => (
+              <li class="reveal relative">
+                <span class="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full border-2 border-accent bg-paper dark:bg-[#0b0d17]"></span>
+                <p class="font-mono text-xs text-slate-500">{e.data.start} — {e.data.current ? 'Present' : e.data.end}</p>
+                <h3 class="font-display mt-1 text-xl font-bold">{e.data.role}</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">
+                  {e.data.companyUrl ? <a href={e.data.companyUrl} target="_blank" rel="noopener" class="hover:text-accent">{e.data.company}</a> : e.data.company}
+                  {e.data.location && <span> · {e.data.location}</span>}
+                </p>
+                {e.rendered?.html && <div class="prose-body mt-2 text-sm" set:html={e.rendered.html} />}
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+      <div class="space-y-16">
+        {education.length > 0 && (
+          <div>
+            <div class="reveal"><p class="eyebrow">Learning</p><h2 class="h2 mt-3">Education</h2></div>
+            <div class="mt-10 space-y-4">
+              {education.map((e) => (
+                <div class="reveal card p-6">
+                  <p class="font-mono text-xs text-slate-500">{e.data.start}{e.data.end && ` — ${e.data.end}`}</p>
+                  <h3 class="font-display mt-1 text-lg font-bold">{e.data.degree}</h3>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">{e.data.institute}{e.data.grade && ` · ${e.data.grade}`}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        {certs.length > 0 && (
+          <div>
+            <div class="reveal"><p class="eyebrow">Credentials</p><h2 class="font-display mt-3 text-2xl font-bold">Certifications</h2></div>
+            <ul class="mt-6 divide-y divide-black/10 dark:divide-white/10">
+              {certs.map((c) => (
+                <li class="reveal flex items-center justify-between gap-4 py-4">
+                  <div><p class="font-semibold">{c.data.title}</p><p class="text-sm text-slate-500">{c.data.issuer}{c.data.date && ` · ${c.data.date}`}</p></div>
+                  {c.data.url && <a href={c.data.url} target="_blank" rel="noopener" class="text-accent" aria-label="View certificate"><Icon name="arrow" class="h-5 w-5" /></a>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  {testimonials.length > 0 && (
+    <section class="section bg-white dark:bg-white/[0.02]">
+      <div class="container-x">
+        <div class="reveal"><p class="eyebrow">Kind words</p><h2 class="h2 mt-3">What clients say</h2></div>
+        <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {testimonials.map((t) => (
+            <figure class="reveal card flex flex-col p-7">
+              <span class="font-display text-5xl leading-none text-accent">“</span>
+              <blockquote class="mt-2 flex-1 leading-relaxed text-slate-700 dark:text-slate-300">{t.data.quote}</blockquote>
+              <figcaption class="mt-6 flex items-center gap-3">
+                {t.data.photo
+                  ? <img src={img(t.data.photo)} alt="" class="h-10 w-10 rounded-full object-cover" />
+                  : <span class="flex h-10 w-10 items-center justify-center rounded-full bg-accent-soft font-semibold text-accent dark:bg-accent/15">{t.data.name[0]}</span>}
+                <div><p class="text-sm font-semibold">{t.data.name}</p>{t.data.role && <p class="text-xs text-slate-500">{t.data.role}</p>}</div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container-x">
+      <div class="reveal card relative overflow-hidden p-8 sm:p-14">
+        <div class="pointer-events-none absolute -bottom-32 -right-20 h-80 w-80 rounded-full bg-accent/20 blur-3xl"></div>
+        <div class="relative grid gap-12 lg:grid-cols-2">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2 class="h2 mt-3">Let's build something together.</h2>
+            <p class="mt-5 text-slate-600 dark:text-slate-400">Have a project in mind or just want to say hi? Send a message and I'll get back to you soon.</p>
+            <a href={`mailto:${settings.email}`} class="mt-8 inline-flex items-center gap-2 font-display text-xl font-bold hover:text-accent"><Icon name="mail" class="h-5 w-5" /> {settings.email}</a>
+            {settings.phone && <p class="mt-2 text-slate-600 dark:text-slate-400">{settings.phone}</p>}
+            <div class="mt-6 flex flex-wrap gap-3">
+              {settings.socials.map((s) => <a href={s.url} target="_blank" rel="noopener" class="btn-ghost py-2!">{s.label}</a>)}
+            </div>
+          </div>
+          {settings.contactFormKey ? (
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+              <input type="hidden" name="access_key" value={settings.contactFormKey} />
+              <input type="hidden" name="subject" value={`New message from ${settings.name} portfolio`} />
+              <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+              <input name="name" required placeholder="Your name" class="w-full rounded-xl border border-black/15 bg-transparent px-4 py-3 outline-none focus:border-accent dark:border-white/15" />
+              <input name="email" type="email" required placeholder="Your email" class="w-full rounded-xl border border-black/15 bg-transparent px-4 py-3 outline-none focus:border-accent dark:border-white/15" />
+              <textarea name="message" required rows="5" placeholder="Tell me about your project" class="w-full rounded-xl border border-black/15 bg-transparent px-4 py-3 outline-none focus:border-accent dark:border-white/15"></textarea>
+              <button type="submit" class="btn-primary w-full justify-center">Send message</button>
+              <p id="form-status" class="text-sm" role="status"></p>
+            </form>
+          ) : (
+            <div class="flex items-center">
+              <a href={`mailto:${settings.email}`} class="btn-primary text-base">Email me <Icon name="arrow" class="h-4 w-4" /></a>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    const status = document.getElementById('form-status');
+    form?.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      if (status) status.textContent = 'Sending…';
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        const json = await res.json();
+        if (status) status.textContent = json.success ? 'Thanks! Your message has been sent.' : 'Something went wrong. Please email me directly.';
+        if (json.success) form.reset();
+      } catch { if (status) status.textContent = 'Something went wrong. Please email me directly.'; }
+    });
+  </script>
+</Base>

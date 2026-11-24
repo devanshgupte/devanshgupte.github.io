@@ -1,0 +1,8 @@
+{
+  "groups": [
+    { "title": "WordPress", "items": ["Custom Themes", "Gutenberg Blocks", "ACF", "WooCommerce", "Elementor", "Multisite"] },
+    { "title": "Frontend", "items": ["HTML", "CSS / SCSS", "JavaScript", "React", "Tailwind CSS"] },
+    { "title": "Backend", "items": ["PHP", "MySQL", "REST API", "WP-CLI"] },
+    { "title": "Tools", "items": ["Git", "GitHub", "Figma", "Local WP", "cPanel"] }
+  ]
+}
