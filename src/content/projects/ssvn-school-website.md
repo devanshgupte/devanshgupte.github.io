@@ -1,13 +1,23 @@
 ---
-title: "Shri Sai Vidhya Niketan school website"
+title: Shri Sai Vidhya Niketan school website
 summary: "A complete redesign of a higher secondary school's website: custom-built, animated, bilingual (English and Hindi), with OTP-verified online admission forms and an admin panel the school runs itself."
-image: /uploads/projects/ssvn-website.svg
-category: "School website"
-kind: "Client project"
-tags: [WordPress, Custom Gutenberg blocks, PHP, JavaScript, Polylang, WhatsApp OTP]
+image: /uploads/Screenshot 2026-11-25 123037.png
+category: School website
+kind: Client project
+tags:
+  - WordPress
+  - Custom Gutenberg blocks
+  - PHP
+  - JavaScript
+  - Polylang
+  - WhatsApp OTP
+liveUrl: ''
+repoUrl: ''
 featured: true
+draft: false
 order: 2
 ---
+
 ## The client
 Shri Sai Vidhya Niketan is a higher secondary school. Its old website was slow and hard to manage: it scored **30 on Google PageSpeed**, and the main content took about **14 seconds** to appear on mobile. The cause was dozens of huge, uncompressed result photos and no caching.
 
