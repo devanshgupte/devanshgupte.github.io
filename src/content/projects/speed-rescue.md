@@ -6,7 +6,7 @@ category: "Performance"
 kind: "Concept project"
 tags: [Core Web Vitals, Caching, Image optimization, Query Monitor]
 featured: false
-order: 7
+order: 9
 ---
 ## The idea
 I built a deliberately slow WordPress site (a page builder, 30 plugins, uncompressed images) and then fixed it, documenting each step and its effect.

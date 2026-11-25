@@ -6,7 +6,7 @@ category: "Web application"
 kind: "Concept project"
 tags: [React, Node.js, PostgreSQL, REST API]
 featured: true
-order: 3
+order: 5
 ---
 ## The idea
 Many small businesses still bill by hand or in spreadsheets, and lose track of stock. Ledgerly is a concept for a simple billing and inventory app that runs in the browser on any device.

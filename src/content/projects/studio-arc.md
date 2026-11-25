@@ -6,7 +6,7 @@ category: "Custom theme"
 kind: "Concept project"
 tags: [Custom post types, ACF, Gutenberg, JavaScript]
 featured: true
-order: 6
+order: 8
 ---
 ## The idea
 Architecture firms live and die by their portfolio, but most of them can't update their own website. Studio Arc is a concept site designed around easy project publishing.

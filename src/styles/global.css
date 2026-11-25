@@ -1,10 +1,11 @@
 @import "tailwindcss";
 @import "@fontsource-variable/unbounded";
 @import "@fontsource-variable/figtree";
+@import "@fontsource-variable/noto-sans-devanagari";
 
 @theme {
-  --font-sans: "Figtree Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Unbounded Variable", "Figtree Variable", sans-serif;
+  --font-sans: "Figtree Variable", "Noto Sans Devanagari Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Unbounded Variable", "Noto Sans Devanagari Variable", "Figtree Variable", sans-serif;
 }
 
 :root {

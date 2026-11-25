@@ -6,7 +6,7 @@ category: "Web application"
 kind: "Personal project"
 tags: [React, Node.js, MySQL, Email & SMS]
 featured: true
-order: 4
+order: 6
 ---
 ## The idea
 Small service businesses lose money to no-shows and spend hours on the phone managing appointments. Slotly lets customers book a free slot themselves and reminds them before they arrive.

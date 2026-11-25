@@ -90,6 +90,10 @@
           "icon": "react"
         },
         {
+          "name": "Expo",
+          "icon": "expo"
+        },
+        {
           "name": "Kotlin",
           "icon": "kotlin"
         },
@@ -109,6 +113,10 @@
         {
           "name": "MySQL",
           "icon": "mysql"
+        },
+        {
+          "name": "MariaDB",
+          "icon": "mariadb"
         },
         {
           "name": "PostgreSQL",

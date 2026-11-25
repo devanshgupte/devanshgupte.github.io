@@ -6,7 +6,7 @@ category: "Mobile app"
 kind: "Concept project"
 tags: [Flutter, Firebase, Node.js, WhatsApp API]
 featured: true
-order: 5
+order: 7
 ---
 
 ## The idea
