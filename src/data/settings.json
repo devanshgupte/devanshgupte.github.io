@@ -3,14 +3,15 @@
   "role": "Web & App Developer",
   "headline": "Websites, apps & software that grow your business.",
   "intro": "I'm Devansh, a full-stack developer. I design and build websites, web apps, mobile apps and custom ERP systems, from the first idea to launch and beyond.",
+  "photo": "/uploads/Devansh_Profile_yellow.jpg",
+  "resume": "/uploads/Devansh_Gupte_Resume.pdf",
+  "about": "I'm a web and app developer who builds products for schools, small businesses and startups. My work ranges from business websites and online stores to web applications, mobile apps and ERP systems that run day-to-day operations.\n\nI like taking a messy process, like paper registers, spreadsheets and phone calls, and turning it into simple software people actually enjoy using. I handle the whole journey: planning, design, development, launch and support.\n\nReplace this text with your own story from the admin panel.",
   "location": "India",
   "available": true,
   "availabilityText": "Taking new projects",
-  "photo": "",
-  "resume": "",
-  "email": "hello@example.com",
+  "responseTime": "Replies within 24 hours",
+  "email": "devanshgupte444@gmail.com",
   "phone": "",
-  "about": "I'm a web and app developer who builds products for schools, small businesses and startups. My work ranges from business websites and online stores to web applications, mobile apps and ERP systems that run day-to-day operations.\n\nI like taking a messy process, like paper registers, spreadsheets and phone calls, and turning it into simple software people actually enjoy using. I handle the whole journey: planning, design, development, launch and support.\n\nReplace this text with your own story from the admin panel.",
   "socials": [
     {
       "label": "GitHub",
@@ -24,6 +25,5 @@
   "contactFormKey": "",
   "seoTitle": "Devansh Gupte | Web & App Developer",
   "seoDescription": "Devansh Gupte builds websites, web applications, mobile apps and ERP systems for schools, small businesses and startups.",
-  "stack": "WordPress, WooCommerce, PHP, React",
-  "responseTime": "Replies within 24 hours"
+  "stack": "WordPress, WooCommerce, PHP, React"
 }
