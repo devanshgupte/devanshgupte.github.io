@@ -1,9 +1,12 @@
 ---
-role: Web & App Developer
-company: Company Name
+role: WordPress Full-Stack Developer
+company: Multidots
+companyUrl: https://www.multidots.com
 location: Remote
-start: "2023"
-current: true
-order: 1
+start: Jan 2024
+end: Dec 2024
+current: false
+order: 2
 ---
-Sample entry — describe your responsibilities and achievements here.
+
+Built custom plugins, themes and REST/GraphQL integrations for enterprise clients on WordPress VIP. Improved plugin performance by 30–40%
