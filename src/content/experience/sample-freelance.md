@@ -1,8 +1,12 @@
 ---
 role: Freelance Web Developer
-company: Self-employed
-start: "2021"
-end: "2023"
-order: 2
+company: Freelance
+companyUrl: ''
+location: Remote
+start: Jan 2025
+end: ''
+current: true
+order: 1
 ---
-Sample entry — built websites for small businesses and agencies.
+
+Websites, web apps and mobile apps for schools, small businesses and MSMEs, including a live school ERP with a React Native parent app on Google Play.
