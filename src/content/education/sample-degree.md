@@ -1,7 +1,8 @@
 ---
-degree: Bachelor of Engineering — Computer Science
-institute: University Name
-start: "2017"
-end: "2021"
-order: 1
+degree: B.Tech, Computer Science and Engineering
+institute: Mandsaur University
+start: '2019'
+end: '2023'
+grade: '7.35'
+order: 2
 ---
