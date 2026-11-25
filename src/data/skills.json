@@ -16,20 +16,12 @@
           "icon": "javascript"
         },
         {
-          "name": "TypeScript",
-          "icon": "typescript"
-        },
-        {
           "name": "React",
           "icon": "react"
         },
         {
           "name": "Next.js",
           "icon": "nextdotjs"
-        },
-        {
-          "name": "Vue.js",
-          "icon": "vuedotjs"
         },
         {
           "name": "Tailwind CSS",
@@ -49,42 +41,18 @@
           "icon": "nodedotjs"
         },
         {
-          "name": "Express",
-          "icon": "express"
-        },
-        {
           "name": "PHP",
           "icon": "php"
         },
         {
           "name": "Laravel",
           "icon": "laravel"
-        },
-        {
-          "name": "Python",
-          "icon": "python"
-        },
-        {
-          "name": "Django",
-          "icon": "django"
-        },
-        {
-          "name": "GraphQL",
-          "icon": "graphql"
         }
       ]
     },
     {
       "title": "Mobile",
       "items": [
-        {
-          "name": "Flutter",
-          "icon": "flutter"
-        },
-        {
-          "name": "Dart",
-          "icon": "dart"
-        },
         {
           "name": "React Native",
           "icon": "react"
@@ -125,14 +93,6 @@
         {
           "name": "MongoDB",
           "icon": "mongodb"
-        },
-        {
-          "name": "Redis",
-          "icon": "redis"
-        },
-        {
-          "name": "Supabase",
-          "icon": "supabase"
         }
       ]
     },
@@ -185,20 +145,8 @@
           "icon": "googlecloud"
         },
         {
-          "name": "DigitalOcean",
-          "icon": "digitalocean"
-        },
-        {
           "name": "Cloudflare",
           "icon": "cloudflare"
-        },
-        {
-          "name": "Vercel",
-          "icon": "vercel"
-        },
-        {
-          "name": "Linux",
-          "icon": "linux"
         }
       ]
     }
